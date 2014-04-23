@@ -4,7 +4,7 @@
 ## matrix object to get the inverse
 
 ## makeMatrix creates a matrix object with several functions attached which
-## provide set and get routines for the original matrix and its inverse and 
+## provide set and get routines for the original matrix and its inverse
 
 makeMatrix <- function(x = matrix()) {
   i <- NULL
@@ -20,7 +20,8 @@ makeMatrix <- function(x = matrix()) {
        getInverse = getInverse)
 }
 
-## returns a cached inverse of the matrix, otherwise creates the inverse and caches it
+## returns the inverse of the matrix, a cached version if available or calculated if not available. Takes the
+## new makeMatrix object as a parameter
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
   i <- x$getInverse()
