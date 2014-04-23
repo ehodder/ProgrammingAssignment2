@@ -3,12 +3,12 @@
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix()) {
+makeMatrix <- function(x = matrix()) {
   ## this is the mean example, needs to be switched to matrix operations!!
   i <- NULL
   set <- function(y) {
     x <<- y
-    m <<- NULL
+    i <<- NULL
   }
   get <- function() x
   setInverse <- function(solve) i <<- solve
@@ -16,18 +16,16 @@ makeCacheMatrix <- function(x = matrix()) {
   list(set = set, get = get,
        setInverse = setInverse,
        getInverse = getInverse)
-
 }
 
-
 ## Write a short comment describing this function
-
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   i <- x$getInverse()
   ## per instructions check if mean was calculated and the matrix hasn't changed
   ## double check the x$get won't blow up first time through
-  if(!is.null(i) & all(x==x$get)) {
+  ##  & all(x==x$get())
+  if(!is.null(i)) {
     message("getting cached data")
     return(i)
   }
