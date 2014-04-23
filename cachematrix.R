@@ -3,10 +3,10 @@
 ## by calling makeMatrix with the original matrix then call cacheSolve with the new
 ## matrix object to get the inverse
 
-## makeMatrix creates a matrix object with several functions attached which
+## makeCacheMatrix creates a matrix object with several functions attached which
 ## provide set and get routines for the original matrix and its inverse
 
-makeMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
   set <- function(y) {
     x <<- y
