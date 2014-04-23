@@ -1,10 +1,12 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These functions provide a way to create and cache an inverse of a matrix
+## so that the inverse only has to be calculated once. Create a new matrix object
+## by calling makeMatrix with the original matrix then call cacheSolve with the new
+## matrix object to get the inverse
 
-## Write a short comment describing this function
+## makeMatrix creates a matrix object with several functions attached which
+## provide set and get routines for the original matrix and its inverse and 
 
 makeMatrix <- function(x = matrix()) {
-  ## this is the mean example, needs to be switched to matrix operations!!
   i <- NULL
   set <- function(y) {
     x <<- y
@@ -18,13 +20,10 @@ makeMatrix <- function(x = matrix()) {
        getInverse = getInverse)
 }
 
-## Write a short comment describing this function
+## returns a cached inverse of the matrix, otherwise creates the inverse and caches it
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  ## Return a matrix that is the inverse of 'x'
   i <- x$getInverse()
-  ## per instructions check if mean was calculated and the matrix hasn't changed
-  ## double check the x$get won't blow up first time through
-  ##  & all(x==x$get())
   if(!is.null(i)) {
     message("getting cached data")
     return(i)
